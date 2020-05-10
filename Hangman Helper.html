@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hangman Helper</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+</head>
+<body>
+    <div class="top">
+        <h1>Hangman Helper</h1>
+        <p>This webpage will help you to make guesses in the classic pencil and paper game of hangman</p>
+    </div>
+    <br />
+
+    <input type="number" id="wordLengthElement" step="1" value="7" class="inputs" />
+    <label for="wordLengthElement" class="inputLabels">How long is the word?</label>
+
+    <br />
+
+    <input type="text" id="knownLetterAndPosition" value="exam_le" class="inputs">
+    <label for="knownLetterAndPosition" class="inputLabels">Use this to specify known letters and their position. Put underscores for unknown letters.</label>
+
+    <br />
+
+    <input type="text" id="excluded" value="q,b,c" class="inputs"/>
+    <label for="excluded" class="inputLabels">Use this to specify excluded letters. For example, input "b,c" to exclude the letters b and c.</label>
+
+    <br />
+
+    <button onclick='getWords()' id="button">Get the words!</button>
+    <div>
+        <p id="totalwordnum"></p>
+        <table id="letterlist">
+            <tr>
+                <th>Letter</th>
+                <th>Percentage</th>
+                <th>Number of Occurences</th>
+            </tr>
+        
+        
+        </table>
+    </div>
+    <div class="box">
+        <p id="output">Your results will appear here</p>
+    </div>
+
+    <script src="alphabet.js"></script>
+    <script src="inputprocesser.js"></script>
+    <script src="tableControl.js"></script>
+    <script src='ajax.js'></script>
+
+</body>
+</html>
